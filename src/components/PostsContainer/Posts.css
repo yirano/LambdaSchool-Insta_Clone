@@ -1,6 +1,6 @@
 .posts-container-wrapper {
   height: 50%;
-  width: 33%;
+  width: 45%;
   min-width: 400px;
   margin: 5px auto;
 }
@@ -20,6 +20,7 @@
 .post-image-wrapper {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .post-image {
@@ -39,6 +40,7 @@
   margin: 5px;
   border-radius: 50%;
 }
+
 .like-section {
   display: flex;
   justify-content: flex-start;
@@ -48,9 +50,13 @@
   height: 10px;
   width: 10px;
   margin: 10px;
+  font-size: 23px;
 }
 .like-number {
   width: 100px;
-  margin: 15px 0px;
-  font-size: 16px;
+  margin: 15px 10px 5px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  text-align: left;
 }
