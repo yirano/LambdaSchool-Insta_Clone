@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import CommentInput from "./CommentInput";
 import Comment from "./Comment";
 import "./Comment.css";
-import data from '../../dummy-data.js';
-
 
 const CommentSection = props => {
 
