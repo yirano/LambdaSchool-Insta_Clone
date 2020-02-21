@@ -12,6 +12,9 @@ const CommentSection = props => {
         <Comment comment={e} />
       ))}
       <CommentInput comment={props} />
+      {setTimeout(function() {
+        console.log(props);
+      }, 8000)}
     </div>
   );
 };

@@ -3,16 +3,29 @@ import React, { useState } from "react";
 
 const CommentInput = props => {
   const { comments } = props.comment;
+  const [currComment, updateComment] = useState(comments);
+  const changeComment = () => {
+    updateComment(
+      currComment.push({
+        username: "LAMBDALLAMA",
+        text: "PEANUT BUTTA JELLY TIME"
+      })
+    );
+    console.log(currComment);
+  };
+  const handleComment = e => {
+    e.preventDefault();
+  };
   return (
-    <form className="comment-form" onSubmit={props.submitComment}>
-      {console.log(comments)}
+    <form className="comment-form" onSubmit={handleComment}>
+      {/* {console.log(currComment)} */}
       <input
         type="text"
-        value={props.comment}
+        // value={props.comment}
         placeholder="Add comment... "
-        onChange={props.changeComment}
+        onChange={changeComment}
       />
-      <button>...</button>
+      <button onClick={changeComment}>...</button>
     </form>
   );
 };
