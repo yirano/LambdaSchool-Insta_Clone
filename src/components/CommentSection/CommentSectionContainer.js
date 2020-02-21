@@ -11,8 +11,8 @@ const CommentSection = props => {
       {props.comments.map(e => (
         <Comment comment={e} />
       ))}
-      <CommentInput comment={props} />
-      {setTimeout(function() {
+      <CommentInput currComments={props.currComments} updateComments={props.updateComments} />
+      {setTimeout(function () {
         console.log(props);
       }, 8000)}
     </div>

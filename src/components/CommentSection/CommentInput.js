@@ -2,16 +2,9 @@
 import React, { useState } from "react";
 
 const CommentInput = props => {
-  const { comments } = props.comment;
-  const [currComment, updateComment] = useState(comments);
   const changeComment = () => {
-    updateComment(
-      currComment.push({
-        username: "LAMBDALLAMA",
-        text: "PEANUT BUTTA JELLY TIME"
-      })
-    );
-    console.log(currComment);
+
+    console.log(props);
   };
   const handleComment = e => {
     e.preventDefault();
@@ -25,7 +18,14 @@ const CommentInput = props => {
         placeholder="Add comment... "
         onChange={changeComment}
       />
-      <button onClick={changeComment}>...</button>
+      <button onClick={() => {
+        props.updateComments(
+          props.currComments.push({
+            username: "LAMBDALLAMA",
+            text: "PEANUT BUTTA JELLY TIME"
+          })
+        )
+      }}>...</button>
     </form>
   );
 };
