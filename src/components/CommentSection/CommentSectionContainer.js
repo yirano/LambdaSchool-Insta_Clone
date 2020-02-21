@@ -5,14 +5,13 @@ import Comment from "./Comment";
 import "./Comment.css";
 
 const CommentSection = props => {
-
   return (
     <div>
       {/* map through the comments data and return the Comment component */}
       {props.comments.map(e => (
-          <Comment comment={e} />
-        ))}
-      <CommentInput />
+        <Comment comment={e} />
+      ))}
+      <CommentInput comment={props} />
     </div>
   );
 };

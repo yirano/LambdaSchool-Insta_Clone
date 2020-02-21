@@ -1,17 +1,15 @@
-// You do not need to do anything in this file. Look at the CommentSection file. 
-
-import React from 'react';
-import './Comment.css';
+// You do not need to do anything in this file. Look at the CommentSection file.
+import React from "react";
+import "./Comment.css";
 
 const Comment = props => {
+  const { username, text } = props.comment;
   return (
     <div className="comment-text">
-      <span className="user">{props.comment.username}</span>
-      {' '}
-      <span className="comment">{props.comment.text}</span>
+      <span className="user">{username}</span>{" "}
+      <span className="comment">{text}</span>
     </div>
   );
 };
-
 
 export default Comment;
