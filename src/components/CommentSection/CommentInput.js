@@ -8,21 +8,27 @@ const CommentInput = props => {
     if (inputValue != '') {
       props.updateComments(
         [...props.comments, { username: "LAMBDA_LLAMA", text: inputValue }]);
+      console.log(updateInputVal);
     } else {
       console.log("say something fool");
     }
   }
   const clearField = () => {
-    updateInputVal({ ...inputValue })
+    document.querySelectorAll('.clearField').forEach(function (x) {
+      return x.value === "" ? null : x.value = "";
+    })
+    updateInputVal('')
   }
   const handleSubmit = e => {
     e.preventDefault();
-    updateComment();
     clearField();
+    updateComment();
+    console.log(inputValue);
   };
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
       <input
+        class="clearField"
         type="text"
         value={props.comment}
         placeholder="Add comment... "
