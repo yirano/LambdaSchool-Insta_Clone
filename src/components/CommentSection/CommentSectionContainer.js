@@ -7,15 +7,11 @@ import "./Comment.css";
 const CommentSection = props => {
   return (
     <div>
-      {/* map through the comments data and return the Comment component */}
       {props.comments.map(e => (
         <Comment comment={e} />
       ))}
       <CommentInput currComments={props.currComments} updateComments={props.updateComments} comments={props.comments}
       />
-      {/* {setTimeout(function () {
-        console.log(props);
-      }, 8000)} */}
     </div>
   );
 };

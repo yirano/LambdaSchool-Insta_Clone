@@ -9,13 +9,11 @@ const CommentInput = props => {
       props.updateComments(
         [...props.comments, { username: "LAMBDA_LLAMA", text: inputValue }]);
       console.log(updateInputVal);
-    } else {
-      console.log("say something fool");
     }
   }
   const clearField = () => {
     document.querySelectorAll('.clearField').forEach(function (x) {
-      return x.value === "" ? null : x.value = "";
+      x.value === "" ? null : x.value = "";
     })
     updateInputVal('')
   }
@@ -23,7 +21,6 @@ const CommentInput = props => {
     e.preventDefault();
     clearField();
     updateComment();
-    console.log(inputValue);
   };
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
