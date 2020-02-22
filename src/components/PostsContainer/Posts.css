@@ -4,23 +4,27 @@
   min-width: 400px;
   margin: 5px auto;
 }
-.post-header{
+
+.post-header {
   display: flex;
   align-items: center;
 }
+
 .post-header h2 {
   font-size: 14px;
   font-weight: bold;
 }
+
 .post-border {
   border: 1px solid #d3d3d3;
   margin: 15px 0;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
+
 .post-image-wrapper {
   display: flex;
   justify-content: center;
-  height: 32.4rem;  
+  height: 32.4rem;
   width: auto;
   overflow: hidden;
 }
@@ -37,6 +41,7 @@
   height: 50px;
   width: 50px;
 }
+
 .post-thumb {
   height: 80%;
   margin: 5px;
@@ -54,6 +59,7 @@
   margin: 10px;
   font-size: 23px;
 }
+
 .like-number {
   width: 100px;
   margin: 15px 10px 5px;
@@ -61,4 +67,8 @@
   color: black;
   font-weight: bold;
   text-align: left;
+}
+
+.like-red {
+  color: 'red';
 }

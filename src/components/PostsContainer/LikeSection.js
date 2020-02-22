@@ -4,14 +4,32 @@
 import React from "react";
 
 const LikeSection = props => {
+  const handleLike = e => {
+    e.target.classList.toggle("like-red");
+
+    if (e.target.classList.value.includes("like-red")) {
+      console.log("yes");
+      props.setLikes(props.likes + 1);
+      e.target.style.color = "red";
+    } else {
+      props.setLikes(props.likes - 1);
+      e.target.style.color = "black";
+    }
+    console.log(e.target.classList);
+
+    // if (e.target.style.color === "red") {
+    //   props.setLikes(props.likes + 1);
+    //   // return (e.target.style.color = "black");
+    // } else if (e.target.style.color === "black") {
+    //   props.setLikes(props.likes - 1);
+    //   // return (e.target.style.color = "red");
+    // }
+  };
   return (
     <div>
-      <div
-        className="like-section"
-        key="likes-icons-container"
-      >
+      <div className="like-section" key="likes-icons-container">
         <div className="like-section-wrapper">
-          <i onClick={() => { props.setLikes(props.likes + 1) }} className="far fa-heart" />
+          <i onClick={handleLike} className="far fa-heart" />
         </div>
         <div className="like-section-wrapper">
           <i className="far fa-comment" />
@@ -19,7 +37,7 @@ const LikeSection = props => {
       </div>
       <p className="like-number">{props.likes} likes</p>
     </div>
-  )
+  );
 };
 
 export default LikeSection;

@@ -2,21 +2,22 @@
 import React, { useState, useEffect } from "react";
 
 const CommentInput = props => {
-  const [inputValue, updateInputVal] = useState('');
+  const [inputValue, updateInputVal] = useState("");
 
   const updateComment = () => {
-    if (inputValue != '') {
-      props.updateComments(
-        [...props.comments, { username: "LAMBDA_LLAMA", text: inputValue }]);
-      console.log(updateInputVal);
+    if (inputValue != "") {
+      props.updateComments([
+        ...props.comments,
+        { username: "LAMBDA_LLAMA", text: inputValue }
+      ]);
     }
-  }
+  };
   const clearField = () => {
-    document.querySelectorAll('.clearField').forEach(function (x) {
-      x.value === "" ? null : x.value = "";
-    })
-    updateInputVal('')
-  }
+    document.querySelectorAll(".clearField").forEach(function(x) {
+      x.value === "" ? null : (x.value = "");
+    });
+    updateInputVal("");
+  };
   const handleSubmit = e => {
     e.preventDefault();
     clearField();
@@ -29,7 +30,9 @@ const CommentInput = props => {
         type="text"
         value={props.comment}
         placeholder="Add comment... "
-        onChange={(e) => { updateInputVal(e.target.value) }}
+        onChange={e => {
+          updateInputVal(e.target.value);
+        }}
       />
       <button>...</button>
     </form>
