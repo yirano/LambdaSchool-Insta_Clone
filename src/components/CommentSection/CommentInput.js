@@ -23,6 +23,10 @@ const CommentInput = props => {
     clearField();
     updateComment();
   };
+  const handleChange = e => {
+    updateInputVal(e.target.value);
+    e.target.style.color = "black";
+  };
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
       <input
@@ -30,9 +34,7 @@ const CommentInput = props => {
         type="text"
         value={props.comment}
         placeholder="Add comment... "
-        onChange={e => {
-          updateInputVal(e.target.value);
-        }}
+        onChange={handleChange}
       />
       <button>...</button>
     </form>
