@@ -5,9 +5,12 @@ const LikeSection = props => {
   // Handle what happens when the user clicks the 'heart' icon
   const handleLike = e => {
     e.target.classList.toggle("like-red");
+
+    // If the user clicks on the heart icon to like the image, incrememt the like count by 1
     if (e.target.classList.value.includes("like-red")) {
       props.setLikes(props.likes + 1);
       e.target.style.color = "red";
+      // Remove a like count otherwise
     } else {
       props.setLikes(props.likes - 1);
       e.target.style.color = "black";
