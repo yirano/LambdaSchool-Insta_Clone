@@ -1,31 +1,34 @@
 // You do not need to do anything in this file
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const CommentInput = props => {
-  const changeComment = () => {
+  const [inputValue, updateInputVal] = useState('');
 
-    console.log(props);
-  };
-  const handleComment = e => {
+  const updateComment = () => {
+    if (inputValue != '') {
+      props.updateComments(
+        [...props.comments, { username: "LAMBDA_LLAMA", text: inputValue }]);
+    } else {
+      console.log("say something fool");
+    }
+  }
+  const clearField = () => {
+    updateInputVal({ ...inputValue })
+  }
+  const handleSubmit = e => {
     e.preventDefault();
+    updateComment();
+    clearField();
   };
   return (
-    <form className="comment-form" onSubmit={handleComment}>
-      {/* {console.log(currComment)} */}
+    <form className="comment-form" onSubmit={handleSubmit}>
       <input
         type="text"
-        // value={props.comment}
+        value={props.comment}
         placeholder="Add comment... "
-        onChange={changeComment}
+        onChange={(e) => { updateInputVal(e.target.value) }}
       />
-      <button onClick={() => {
-        props.updateComments(
-          props.currComments.push({
-            username: "LAMBDALLAMA",
-            text: "PEANUT BUTTA JELLY TIME"
-          })
-        )
-      }}>...</button>
+      <button>...</button>
     </form>
   );
 };

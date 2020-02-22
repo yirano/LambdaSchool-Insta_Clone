@@ -11,10 +11,11 @@ const CommentSection = props => {
       {props.comments.map(e => (
         <Comment comment={e} />
       ))}
-      <CommentInput currComments={props.currComments} updateComments={props.updateComments} />
-      {setTimeout(function () {
+      <CommentInput currComments={props.currComments} updateComments={props.updateComments} comments={props.comments}
+      />
+      {/* {setTimeout(function () {
         console.log(props);
-      }, 8000)}
+      }, 8000)} */}
     </div>
   );
 };
