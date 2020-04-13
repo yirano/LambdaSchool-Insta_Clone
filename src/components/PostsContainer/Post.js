@@ -6,8 +6,23 @@ import PostHeader from "./PostHeader";
 import "./Posts.css";
 
 const Post = props => {
-  const [likes, setLikes] = useState(12);
+  console.log(props);
+  const [likes, setLikes] = useState(props.post.likes);
   const [comments, updateComments] = useState(props.post.comments);
+
+  const handleLike = (e) => {
+    e.target.classList.toggle("like-red");
+
+    // If the user clicks on the heart icon to like the image, incrememt the like count by 1
+    if (e.target.classList.value.includes("like-red")) {
+      setLikes(likes + 1);
+      e.target.style.color = "red";
+      // Remove a like count otherwise
+    } else {
+      setLikes(likes - 1);
+      e.target.style.color = "black";
+    }
+  }
   return (
     <div className="post-border">
       <PostHeader
@@ -21,7 +36,7 @@ const Post = props => {
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection likes={likes} setLikes={setLikes} />
+      <LikeSection likes={likes} setLikes={setLikes} handleLike={handleLike} />
       <CommentSection
         postId={props.post.imageUrl}
         comments={comments}
