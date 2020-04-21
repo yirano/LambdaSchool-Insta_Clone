@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   align-items: center;
   background: #ffffff;
+
 }
 .search-form {
   width: 150px;
@@ -24,8 +25,16 @@
 
 .social-wrapper {
   display: flex;
+  position: relative;
+  right: 27px;
 }
 
 .social {
   width: 50px;
+  font-size: 23px;
+}
+
+.fa-instagram {
+  font-size: 32px;
+  line-height: 46px;
 }

@@ -3,21 +3,41 @@
   padding: 2px;
   margin-left: 4px;
 }
+
 .comment {
   font-size: 16px;
 }
-.comment-form  {
-  margin: 10px 0;
-  width: 100%;
-}
-.comment-form input {
-  width: 100%;
-  font-size: 14px;
-  padding: 10px;
-  border: none;
+
+.comment-form {
+  box-sizing: border-box;
+  display: flex;
   border-top: 1px solid #efefef;
-  color: #999;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
+
+.comment-form input {
+  width: 96%;
+  font-size: 14px;
+  padding: 10px 0;
+  margin: 10px 0;
+  border: none;
+  color: #999;
+  background-color: inherit;
+}
+
+.comment-form input:focus {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .user {
   font-size: 14px;
   margin-left: 5px;
